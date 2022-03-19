@@ -14,6 +14,7 @@ var choice2 = document.getElementById("choice2");
 var choice3 = document.getElementById("choice3");
 var endScreen = document.getElementById("endMsg");
 var nextBtn = document.getElementById("nextQ");
+var endScore = document.getElementById("finalScore");
 
 //Quiz variables
 let time = questions.length * 20; 
@@ -54,6 +55,7 @@ function displayTest(){
 
 function nextQuestion () {
     //enter the next question
+    console.log(chosen);
     if(!wrongScreen.classList.contains("hide")){
         wrongScreen.classList.add("hide");
     } 
@@ -62,10 +64,7 @@ function nextQuestion () {
     }
     questionIndex ++;
     if(questionIndex > questions.length - 1) {
-        alert("You are done.");
-        questionsEl.classList.add("hide");
-        endScreen.classList.remove("hide");
-        return;
+        endQuiz();
     }
     displayTest();
 }
@@ -78,7 +77,6 @@ function validateAnswer0(){
         wrongScreen.classList.remove("hide");
 
     } else {
-        score += 10;
         correctScreen.classList.remove("hide");
     }
     nextBtn.addEventListener ("click", nextQuestion);
@@ -87,13 +85,11 @@ function validateAnswer0(){
 function validateAnswer1(){
     console.log('you have chosen B')
     chosen.push(questions[questionIndex].choices[1]);
-    console.log(chosen);
     if(chosen[questionIndex]!=answer[questionIndex]){
         score-=10;
         wrongScreen.classList.remove("hide");
 
     } else {
-        score += 10;
         correctScreen.classList.remove("hide");
     }
     nextBtn.addEventListener ("click", nextQuestion);
@@ -107,7 +103,6 @@ function validateAnswer2(){
         wrongScreen.classList.remove("hide");
 
     } else {
-        score += 10;
         correctScreen.classList.remove("hide");
     }
     nextBtn.addEventListener ("click", nextQuestion);
@@ -121,10 +116,17 @@ function validateAnswer3(){
         wrongScreen.classList.remove("hide");
 
     } else {
-        score += 10;
         correctScreen.classList.remove("hide");
     }
     nextBtn.addEventListener ("click", nextQuestion);
+}
+
+function endQuiz(){
+    endScore.innerHTML = "Your score this time is " + (time + score);
+    questionsEl.classList.add("hide");
+    endScreen.classList.remove("hide");
+    nextBtn.classList.add("hide");
+    return;
 }
 
 for(let i = 0; i < questionBtns.length; i++) {

@@ -19,14 +19,14 @@ var questions = [
 
 {
     title: "Which of the following element is responsible for making the text bold in HTML?",
-    choices: ["<pre>","<a>", "<b>", "<br>"],
-    answer: "<b>",
+    choices: ["pre","a", "b", "br"],
+    answer: "b",
 },
 
 {
     title: "Which of the following is the correct syntax for referring the external style sheet?",
-    choices: ["<style src = example.css>", "<style src = 'example.css'>", "<stylesheet> example.css </stylesheet>", "<link rel='stylesheet' type='text/css' href='example.css'>"],
-    answer: "<link rel='stylesheet' type='text/css' href='example.css'>",
+    choices: ["style src = example.css", "style src = 'example.css'", "stylesheet example.css /stylesheet", "link rel='stylesheet' type='text/css' href='example.css'"],
+    answer: "link rel='stylesheet' type='text/css' href='example.css'",
 },
 
 {

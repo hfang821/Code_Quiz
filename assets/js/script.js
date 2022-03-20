@@ -175,8 +175,3 @@ choice0.addEventListener("click", validateAnswer0);
 choice2.addEventListener("click", validateAnswer2);
 choice3.addEventListener("click", validateAnswer3);
 
-
-// for(let i = 0; i < questions.length; i++) {
-
-//    //var button = questionBtns[i];
-// }

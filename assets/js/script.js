@@ -1,7 +1,6 @@
 //DOM APIs
 var questionsEl = document.querySelector ("#questions");
 var questionBtns = Array.from(document.querySelectorAll(".choicebtn"));
-console.log(questionBtns);
 var startButton = document.querySelector("#start-btn");
 var timerEl = document.querySelector("#countdown");
 var submitBtn = document.querySelector("#submit");
@@ -17,11 +16,11 @@ var endScreen = document.getElementById("endMsg");
 var nextBtn = document.getElementById("nextQ");
 var endScore = document.getElementById("finalScore");
 
+
 //Quiz variables
 let time = questions.length * 20; 
 console.log(time);
 let questionNumber=0;
-let score = 0; 
 var answer=[];
 var chosen=[];
 var questionIndex = 0;
@@ -38,6 +37,7 @@ function startQuiz() {
     questionsEl.classList.remove("hide");
     //3. display each question in turn, Index[0] & the next button
     nextBtn.classList.remove("hide");
+    setInterval(timer, 1000);
     displayTest();
 }
 //no need ()
@@ -68,14 +68,20 @@ function nextQuestion () {
     if(questionIndex > questions.length - 1) {
         endQuiz();
     }
+
     displayTest();
+}
+
+function timer () {
+    time--;
+    timerEl.innerHTML = "Time: " + time + "s";
 }
 
 function validateAnswer0(){
     console.log('you have chosen A')
     chosen.push(questions[questionIndex].choices[0]);
     if(chosen[questionIndex]!=answer[questionIndex]){
-        score-=10;
+        time-=10;
         wrongScreen.classList.remove("hide");
         questionsEl.classList.add("hide");
 
@@ -90,7 +96,7 @@ function validateAnswer1(){
     console.log('you have chosen B')
     chosen.push(questions[questionIndex].choices[1]);
     if(chosen[questionIndex]!=answer[questionIndex]){
-        score-=10;
+        time-=10;
         wrongScreen.classList.remove("hide");
         questionsEl.classList.add("hide");
     } else {
@@ -105,7 +111,7 @@ function validateAnswer2(){
     console.log('you have chosen C')
     chosen.push(questions[questionIndex].choices[2]);
     if(chosen[questionIndex]!=answer[questionIndex]){
-        score-=10;
+        time-=10;
         wrongScreen.classList.remove("hide");
         questionsEl.classList.add("hide");
     } else {
@@ -119,7 +125,7 @@ function validateAnswer3(){
     console.log('you have chosen D')
     chosen.push(questions[questionIndex].choices[3]);
     if(chosen[questionIndex]!=answer[questionIndex]){
-        score-=10;
+        time-=10;
         wrongScreen.classList.remove("hide");
         questionsEl.classList.add("hide");
     } else {
@@ -130,17 +136,21 @@ function validateAnswer3(){
 }
 
 function endQuiz(){
-    endScore.innerHTML = "Your score this time is " + (time + score);
+    endScore.innerHTML = "Your score this time is " + time + ".";
     questionsEl.classList.add("hide");
     endScreen.classList.remove("hide");
     nextBtn.classList.add("hide");
     return;
 }
 
-for(let i = 0; i < questions.length; i++) {
-    choice1.addEventListener("click", validateAnswer1);
-    choice0.addEventListener("click", validateAnswer0);
-    choice2.addEventListener("click", validateAnswer2);
-    choice3.addEventListener("click", validateAnswer3);
-   //var button = questionBtns[i];
-}
+
+choice1.addEventListener("click", validateAnswer1);
+choice0.addEventListener("click", validateAnswer0);
+choice2.addEventListener("click", validateAnswer2);
+choice3.addEventListener("click", validateAnswer3);
+
+
+// for(let i = 0; i < questions.length; i++) {
+
+//    //var button = questionBtns[i];
+// }

@@ -1,6 +1,7 @@
 //DOM APIs
 var questionsEl = document.querySelector ("#questions");
 var questionBtns = Array.from(document.querySelectorAll(".choicebtn"));
+console.log(questionBtns);
 var startButton = document.querySelector("#start-btn");
 var timerEl = document.querySelector("#countdown");
 var submitBtn = document.querySelector("#submit");
@@ -56,6 +57,7 @@ function displayTest(){
 function nextQuestion () {
     //enter the next question
     console.log(chosen);
+    questionsEl.classList.remove("hide");
     if(!wrongScreen.classList.contains("hide")){
         wrongScreen.classList.add("hide");
     } 
@@ -75,9 +77,11 @@ function validateAnswer0(){
     if(chosen[questionIndex]!=answer[questionIndex]){
         score-=10;
         wrongScreen.classList.remove("hide");
+        questionsEl.classList.add("hide");
 
     } else {
         correctScreen.classList.remove("hide");
+        questionsEl.classList.add("hide");
     }
     nextBtn.addEventListener ("click", nextQuestion);
 }
@@ -88,10 +92,12 @@ function validateAnswer1(){
     if(chosen[questionIndex]!=answer[questionIndex]){
         score-=10;
         wrongScreen.classList.remove("hide");
-
+        questionsEl.classList.add("hide");
     } else {
         correctScreen.classList.remove("hide");
+        questionsEl.classList.add("hide");
     }
+
     nextBtn.addEventListener ("click", nextQuestion);
 }
 
@@ -101,9 +107,10 @@ function validateAnswer2(){
     if(chosen[questionIndex]!=answer[questionIndex]){
         score-=10;
         wrongScreen.classList.remove("hide");
-
+        questionsEl.classList.add("hide");
     } else {
         correctScreen.classList.remove("hide");
+        questionsEl.classList.add("hide");
     }
     nextBtn.addEventListener ("click", nextQuestion);
 }
@@ -114,9 +121,10 @@ function validateAnswer3(){
     if(chosen[questionIndex]!=answer[questionIndex]){
         score-=10;
         wrongScreen.classList.remove("hide");
-
+        questionsEl.classList.add("hide");
     } else {
         correctScreen.classList.remove("hide");
+        questionsEl.classList.add("hide");
     }
     nextBtn.addEventListener ("click", nextQuestion);
 }
@@ -129,10 +137,10 @@ function endQuiz(){
     return;
 }
 
-for(let i = 0; i < questionBtns.length; i++) {
-    var button = questionBtns[i];
-choice0.addEventListener("click", validateAnswer0);
-choice1.addEventListener("click", validateAnswer1);
-choice2.addEventListener("click", validateAnswer2);
-choice3.addEventListener("click", validateAnswer3);
+for(let i = 0; i < questions.length; i++) {
+    choice1.addEventListener("click", validateAnswer1);
+    choice0.addEventListener("click", validateAnswer0);
+    choice2.addEventListener("click", validateAnswer2);
+    choice3.addEventListener("click", validateAnswer3);
+   //var button = questionBtns[i];
 }

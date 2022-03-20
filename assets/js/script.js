@@ -15,6 +15,7 @@ var choice3 = document.getElementById("choice3");
 var endScreen = document.getElementById("endMsg");
 var nextBtn = document.getElementById("nextQ");
 var endScore = document.getElementById("finalScore");
+var initialEl = document.getElementById("initials");
 
 
 //Quiz variables
@@ -73,8 +74,13 @@ function nextQuestion () {
 }
 
 function timer () {
+    if(questionIndex < questions.length){
     time--;
     timerEl.innerHTML = "Time: " + time + "s";
+    } else {
+        time=time;
+        timerEl.innerHTML = "Score: " + time + ".";
+    }
 }
 
 function validateAnswer0(){
@@ -143,7 +149,27 @@ function endQuiz(){
     return;
 }
 
+function saveScore(){
+    var initials = initialEl.value.trim();
+    console.log(initials);
+    if (initials === "") {
+        window.alert("Please enter a valid initial!")
+        return;
+    } else {
+        var highscore = JSON.parse(window.localStorage.getItem("highscore")) || [];
 
+        var ScoreObj = {
+            score: time,
+            initials: initials
+        };
+
+        highscore.push(ScoreObj);
+
+        window.localStorage.setItem("highscore", JSON.stringify(highscore));
+    }
+}
+
+submitBtn.addEventListener("click", saveScore);
 choice1.addEventListener("click", validateAnswer1);
 choice0.addEventListener("click", validateAnswer0);
 choice2.addEventListener("click", validateAnswer2);

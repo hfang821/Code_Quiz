@@ -12,7 +12,7 @@
 <body>
     <!--HighScore Board section-->
     <div class="scoreboard-btn">
-        <button><a href="./scoreboard.html">View the Scoreboard.</a></button>
+        <button id="buttonstyle"><a href="./scoreboard.html" id="leaderbtn">View the Scoreboard. &#127843</a></button>
     </div>
 
     <!--timer countdown section-->
@@ -28,7 +28,9 @@
                 Try to answer the following questions within the time limit.
                 Keep in mind that incorrect answers will penalize your score/time by ten seconds!
             </p>
+        <div id="start">
             <button id="start-btn">Start Quiz Now</button>
+        </div>
         </div>
     </div>
 
@@ -45,7 +47,6 @@
             <button id="choice3" class="choicebtn"></button>
             <br><br>
         </div>
-
     </div>
 
     <!--hidden: showing if answer is correct-->>
@@ -63,10 +64,10 @@
 
     <!--hidden: end msg-->>
     <div class="hide" id="endMsg">
-        <h2>Well Done!</h2>
+        <h2>Well Done! &#127942;</h2>
         <p id="finalScore">Your final score is</p>
         <p>
-            Enter your Initial:
+            Enter your Initial to submit your score:
             <input type="text" id="initials" required/>
             <button id="submit">Submit.</button>
         </p>

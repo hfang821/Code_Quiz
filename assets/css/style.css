@@ -1,3 +1,65 @@
 .hide {
     display: none;
 }
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(0, 0, 0, 0.075);
+    background-image: url("https://htmlcolorcodes.com/assets/images/colors/baby-blue-color-solid-background-1920x1080.png");
+}
+
+.scoreboard-btn {
+    margin: 20px 600px;
+    flex-wrap: wrap;
+    
+}
+
+#buttonstyle {
+    background-color: darksalmon;
+}
+
+#leaderbtn {
+    font-size: 20px;
+    font-style: oblique;
+    color: black;
+    text-decoration: none; 
+}
+
+#countdown {
+    margin: 10px 612px;
+}
+
+#start-btn {
+    margin: 20px 641px;
+    font-size: large;
+    color: slateblue;
+    background-color: aquamarine;
+}
+
+.choicebtn {
+    font-style: italic;
+    background-color: antiquewhite;
+}
+
+#nextQ {
+    background-color: darkseagreen;
+    font-family: auto;
+}
+
+#leadstyle {
+    background-color: chartreuse;
+}
+
+.leadstyle {
+    background-color:red;
+}
+
+.leadfont {
+    color: black;
+    font-weight: bold;
+}
+
+#submit {
+    font-style: italic;
+    background-color: antiquewhite;
+}

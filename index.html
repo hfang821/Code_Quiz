@@ -10,51 +10,70 @@
 </head>
 
 <body>
-
+    <!--HighScore Board section-->
     <div class="scoreboard-btn">
-        <button>View the Scoreboard.</button>
+        <button id="buttonstyle"><a href="./scoreboard.html" id="leaderbtn">View the Scoreboard. &#127843</a></button>
     </div>
 
+    <!--timer countdown section-->
     <div class="timer">
-        <button>Time: </button>
+        <span id="countdown">Time: </span>
     </div>
 
-    <div class="quiz-questions">
+    <!--Start Screen-->
+    <h2 class="header">Code Quiz</h2>
+    <div id="quiz-questions">
         <div class="start-box" id="start-screen">
-            <h2 class="header">Code Quiz</h2>
             <p class="start-message">This is a code quiz that will test your knowledge of HTML, CSS and JavaScript.
                 Try to answer the following questions within the time limit.
                 Keep in mind that incorrect answers will penalize your score/time by ten seconds!
             </p>
+        <div id="start">
             <button id="start-btn">Start Quiz Now</button>
+        </div>
         </div>
     </div>
 
-    <!--hidden: questions appear here-->
-    <div class="" id="">
-        <h3></h3>
+    <!--hidden: question & choices appear here-->
+    <div class="hide" id="questions">
+        <h3 id="question-title">question</h3>
+        <div id="choices" class="choices">
+            <button id="choice0" class="choicebtn"></button>
+            <br><br>
+            <button id="choice1" class="choicebtn"></button>
+            <br><br>
+            <button id="choice2" class="choicebtn"></button>
+            <br><br>
+            <button id="choice3" class="choicebtn"></button>
+            <br><br>
+        </div>
     </div>
 
     <!--hidden: showing if answer is correct-->>
-    <div id="correct">
+    <div id="correct" class="hide">
         <h3>Correct!</h3>
     </div>
 
     <!--hidden: showing if answer is incorrect-->>
-    <div id="incorrect">
-        <h3>Incorrect.</h3>
+    <div id="incorrect" class="hide">
+        <h3>Incorrect. 10 seconds deducted.</h3>
     </div>
 
+    <!--next question button-->
+    <button id="nextQ" class="hide"></button>
+
     <!--hidden: end msg-->>
-    <div id="end-">
-        <h2>Well Done!</h2>
-        <p>Your final score is</p>
+    <div class="hide" id="endMsg">
+        <h2>Well Done! &#127942;</h2>
+        <p id="finalScore">Your final score is</p>
         <p>
-            Enter your Full name:
+            Enter your Initial to submit your score:
+            <input type="text" id="initials" required/>
+            <button id="submit">Submit.</button>
         </p>
     </div>
 
-
+<script src="./assets/js/questions.js"></script>
 <script src="./assets/js/script.js"></script>
 
 </body>

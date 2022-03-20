@@ -166,6 +166,8 @@ function saveScore(){
         highscore.push(ScoreObj);
 
         window.localStorage.setItem("highscore", JSON.stringify(highscore));
+
+        window.location.href="scoreboard.html";
     }
 }
 

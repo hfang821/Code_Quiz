@@ -16,6 +16,7 @@ var endScreen = document.getElementById("endMsg");
 var nextBtn = document.getElementById("nextQ");
 var endScore = document.getElementById("finalScore");
 var initialEl = document.getElementById("initials");
+var restartElBtn = document.getElementById("redo");
 
 
 //Quiz variables
@@ -25,6 +26,7 @@ let questionNumber=0;
 var answer=[];
 var chosen=[];
 var questionIndex = 0;
+var timerID;
 
 for(let i=0; i < questions.length; i++) {
     answer.push(questions[i].answer);
@@ -38,7 +40,7 @@ function startQuiz() {
     questionsEl.classList.remove("hide");
     //3. display each question in turn, Index[0] & the next button
     nextBtn.classList.remove("hide");
-    setInterval(timer, 1000);
+    timerID = setInterval(timer, 1000);
     displayTest();
 }
 //no need ()
@@ -80,6 +82,10 @@ function timer () {
     } else {
         time=time;
         timerEl.innerHTML = "Score: " + time + ".";
+    }
+    if (time <= 0) {
+        clearInterval(timerID);
+        endQuiz();
     }
 }
 
@@ -171,6 +177,8 @@ function saveScore(){
     }
 }
 
+
+restartElBtn.addEventListener("click", function(){location.reload()});
 submitBtn.addEventListener("click", saveScore);
 choice1.addEventListener("click", validateAnswer1);
 choice0.addEventListener("click", validateAnswer0);

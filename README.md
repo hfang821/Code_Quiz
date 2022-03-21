@@ -34,7 +34,8 @@ Coming Soon!
 
 4. If the question is answered incorrectly, 10 seconds will be deducted from the timer. ![image](https://user-images.githubusercontent.com/95199209/159193574-50804c06-13b9-438f-8350-61f48018f92a.png)
 5. Once completed, enter the initials and click the submit button. ![image](https://user-images.githubusercontent.com/95199209/159193607-7c846518-f1c4-428f-bad7-1c372e33fe1c.png)
-6. Previous performance will be shown in the leaderboard. <br> ![image](https://user-images.githubusercontent.com/95199209/159193651-65baa1ab-0a97-4d2b-9d7b-25632d1c74da.png)
+6. If not satisfied with the score, click the restart button to redo the test.
+7. Previous performance will be shown in the leaderboard. <br> ![image](https://user-images.githubusercontent.com/95199209/159193651-65baa1ab-0a97-4d2b-9d7b-25632d1c74da.png)
 
 ---
 

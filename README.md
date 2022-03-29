@@ -19,7 +19,7 @@ https://hfang821.github.io/Code_Quiz/
 
 Windows Users: 
 * Open Gitbash, navigate towards your project location from your root by using "cd ./ project location"
-* Choose a clone option from my "run-buddy" repository (either HTTPS or SSH should work)
+* Choose a clone option from my "Code_Quiz" repository (either HTTPS or SSH should work)
 * In Gitbash, type "git clone HTTPS or SSH"
 * Once the clone is successful, you are ready to go!
 

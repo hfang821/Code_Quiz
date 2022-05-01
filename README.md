@@ -1,7 +1,7 @@
 # Code_Quiz
 
 ## Link to the Deployed Application:
-https://hfang821.github.io/Code_Quiz/
+https://hfang821.github.io/Code_Quiz_FE/
 
 ## Description:
 
